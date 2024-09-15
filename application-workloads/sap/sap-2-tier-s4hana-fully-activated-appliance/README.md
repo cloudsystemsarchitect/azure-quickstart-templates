@@ -56,14 +56,14 @@ Go for a long coffee or tea break. Or better yet, read the latest [SAP on Azure 
 You will need a SAPGUI to connect to the SAP S/4HANA system. You can download the SAPGUI from the [SAP Software Centre](https://me.sap.com/softwarecenter).
 
 ### Stop and Start
-As s4hadm user, you can stop and start the SAP system using the following commands:
+You can stop and start the SAP system using the following commands:
 
 ```bash
 sapcontrol -nr 00 -function StopSystem
 sapcontrol -nr 01 -function StopSystem
 
-sapcontrol -nr 00 -function StartSystem
 sapcontrol -nr 01 -function StartSystem
+sapcontrol -nr 00 -function StartSystem
 ```
 
 As hdbadm, you can stop and start the HANA database using the following commands:

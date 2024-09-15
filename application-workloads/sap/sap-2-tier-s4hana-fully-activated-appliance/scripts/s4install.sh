@@ -118,6 +118,27 @@ function renamesap()
     log "End of renamesap"
 }
 
+function sapconfig()
+{
+    log "Start of sapconfig"
+    # Startup the SAP HANA database
+    sed -i 's/Autostart = 0/Autostart = 1/g' /usr/sap/HDB/SYS/profile/HDB_HDB02_vhcalhdbdb
+    # Sentinel Prerequisite - https://learn.microsoft.com/en-us/azure/sentinel/sap/preparing-sap
+    wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Solutions/SAP/CR/K900271.NPL -O /usr/sap/trans/cofiles/K900271.NPL
+    wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Solutions/SAP/CR/R900271.NPL -O /usr/sap/trans/data/R900271.NPL
+    
+    wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Solutions/SAP/CR/K900202.NPL -O /usr/sap/trans/cofiles/K900202.NPL
+    wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Solutions/SAP/CR/R900202.NPL -O /usr/sap/trans/data/R900202.NPL
+
+    wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Solutions/SAP/CR/K900202.NPL -O /usr/sap/trans/cofiles/K900202.NPL
+    wget wget https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Solutions/SAP/CR/R900202.NPL -O /usr/sap/trans/data/R900202.NPL
+
+    chown s4hadm:sapsys /usr/sap/trans/cofiles/*.NPL
+    chown s4hadm:sapsys /usr/sap/trans/data/*.NPL
+    
+    log "End of sapconfig"
+}
+
 # Main script starts here
 log "start of s4hanafa-install.sh"
 storagePath="$1"
@@ -135,5 +156,5 @@ copybinaries "$sapdir"
 extractbinaries "$sapdir"
 renamedb "$sapdir"
 renamesap "$sapdir"
-
+sapconfig
 log "end of s4hanafa-install.sh"
