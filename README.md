@@ -1,3 +1,5 @@
+> This is a copy of work originally done at Microsoft. Refer to the [SAP 2 Tier S/4HANA Fully Activated Appliance Quick start](./application-workloads/sap/sap-2-tier-s4hana-fully-activated-appliance)
+
 # Azure Resource Manager QuickStart Templates
 
 This repo contains all currently available Azure Resource Manager templates contributed by the community. A searchable template index is maintained at [azure.com](https://azure.microsoft.com/documentation/templates).
