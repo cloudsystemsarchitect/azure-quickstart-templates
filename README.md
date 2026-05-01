@@ -1,4 +1,4 @@
-> This is a copy of work originally done at Microsoft. Refer to the [SAP 2 Tier S/4HANA Fully Activated Appliance Quick start](./application-workloads/sap/sap-2-tier-s4hana-fully-activated-appliance)
+> This is a copy of the work originally done at Microsoft. Refer to the [SAP 2 Tier S/4HANA Fully Activated Appliance Quick start](./application-workloads/sap/sap-2-tier-s4hana-fully-activated-appliance)
 
 # Azure Resource Manager QuickStart Templates
 
